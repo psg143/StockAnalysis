@@ -39,7 +39,7 @@ def main():
     ######################### Market Summary ############################
     st.header("Market Summary")
         
-    green_stocks_count = merged_df[merged_df['yearly_return'] > 0]['Ticker'].nunique()
+    green_stocks_count = merged_df[merged_df['yearly_return'] >= 0]['Ticker'].nunique()
     red_stocks_count = merged_df[merged_df['yearly_return'] < 0]['Ticker'].nunique()
     avg_price = merged_df['close'].mean()
     avg_volume = merged_df['volume'].mean()
